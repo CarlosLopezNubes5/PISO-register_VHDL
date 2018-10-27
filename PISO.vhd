@@ -5,7 +5,7 @@ entity  PISO is
 generic(m:integer := 8);
 port( SP,CLK,CLR : in std_logic;
           PI : in std_logic_vector(m-1 downto 0);
-				  SO : out std_logic
+	  SO : out std_logic
 );
 end PISO;
 
@@ -20,7 +20,6 @@ elsif(CLK'event and CLK='0') then
 if(SP='0') then
 temp(m-2 downto 0)<=temp(m-1 downto 1);
 temp(m-1)<='0';
-
 else 
 temp<=PI;
 end if;
